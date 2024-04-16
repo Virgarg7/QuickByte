@@ -1,17 +1,20 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
 
 function Navbar() {
+
+    const [menu,setMenu] = useState("Home");
+
     return (
         <div className='navbar'>
             <img src={assets.logo} alt="" className='logo' />
             <ul className='navbar-menu'>
-                <li>Home</li>
-                <li>Menu</li>
-                <li>Mobile-App</li>
-                <li>Contact us</li>
+                <li onClick={()=>setMenu("Home")} className = {menu==="Home"?"active":""} >Home</li>
+                <li onClick={()=>setMenu("Menu")} className = {menu==="Menu"?"active":""}>Menu</li>
+                <li onClick={()=>setMenu("Mobile-app")} className = {menu==="Mobile-app"?"active":""}>Mobile-App</li>
+                <li onClick={()=>setMenu("Contact-us")} className = {menu==="Contact-us"?"active":""}>Contact us</li>
             </ul>
             <div className="navbar-right">
                 {/* 1. */}
