@@ -21,7 +21,7 @@ a {
   margin: auto;
 }
 
-/* Added Animation for making good on page reload */
+/* Added Animation for making good effect on page reload */
 @keyframes fadeIn {
   0% {
     opacity: 0;

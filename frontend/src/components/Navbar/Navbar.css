@@ -36,7 +36,7 @@
     transition: 0.2s;
 }
 
-.navbar button:hover{
+.navbar button :hover{
     background-color: #fff4f2;
 
 }
