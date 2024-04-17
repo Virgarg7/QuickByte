@@ -1,20 +1,22 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
+import { Link } from 'react-router-dom';
 
-function Navbar() {
+function Navbar({setShowLogin}) {
 
-    const [menu,setMenu] = useState("Home");
+    const [menu, setMenu] = useState("Home");
 
     return (
         <div className='navbar'>
             <img src={assets.logo} alt="" className='logo' />
             <ul className='navbar-menu'>
-                <li onClick={()=>setMenu("Home")} className = {menu==="Home"?"active":""} >Home</li>
-                <li onClick={()=>setMenu("Menu")} className = {menu==="Menu"?"active":""}>Menu</li>
-                <li onClick={()=>setMenu("Mobile-app")} className = {menu==="Mobile-app"?"active":""}>Mobile-App</li>
-                <li onClick={()=>setMenu("Contact-us")} className = {menu==="Contact-us"?"active":""}>Contact us</li>
+                <Link to='/' onClick={() => setMenu("Home")} className={menu === "Home" ? "active" : ""} >Home</Link>
+                <a href='#explore-menu' onClick={() => setMenu("Menu")} className={menu === "Menu" ? "active" : ""}>Menu</a>
+                <a href='#app-download' onClick={() => setMenu("Mobile-app")} className={menu === "Mobile-app" ? "active" : ""}>Mobile-App</a>
+                <a href='#footer' onClick={() => setMenu("Contact-us")} className={menu === "Contact-us" ? "active" : ""}>Contact us</a>
             </ul>
             <div className="navbar-right">
                 {/* 1. */}
@@ -26,7 +28,7 @@ function Navbar() {
                 </div>
 
                 {/* 3. */}
-                <button>Sign in</button>
+                <button  onClick={()=>setShowLogin(true)}>Sign in</button>
 
             </div>
         </div>
