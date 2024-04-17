@@ -5,9 +5,13 @@ import App from './App.jsx'
 import './index.css'
 // Set up React router
 import { BrowserRouter } from 'react-router-dom'
+// Setup of Context API 
+import  StoreContextProvider  from './context/StoreContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <App/>
+    <StoreContextProvider>
+      <App />
+    </StoreContextProvider>
   </BrowserRouter>
 )
