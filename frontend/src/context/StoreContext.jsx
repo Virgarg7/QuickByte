@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import { createContext, useEffect, useState } from "react";
 import { food_list,menu_list } from "../assets/assets";
 export const StoreContext = createContext(null);
