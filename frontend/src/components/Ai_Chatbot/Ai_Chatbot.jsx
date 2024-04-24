@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
+// eslint-disable-next-line react-refresh/only-export-components
 import React, { useEffect, useRef, useState } from "react";
 import "./AI_Chatbot.css";
 
@@ -22,9 +24,9 @@ const RecipeCard = ({ onSubmit }) => {
     };
 
     return (
-        <div className="w-[400px] border rounded-lg overflow-hidden shadow-lg bg-white">
+        <div className="chatbot-container__recipe-card border rounded-lg overflow-hidden shadow-lg bg-white">
             <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-4 text-gray-800">Recipe Generator</div>
+                <div className="title font-bold text-xl mb-4 text-gray-800">Recipe Generator</div>
                 <div className="mb-4">
                     <label
                         className="block text-gray-700 text-sm font-bold mb-2"
@@ -33,7 +35,7 @@ const RecipeCard = ({ onSubmit }) => {
                         Ingredients
                     </label>
                     <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="input-field shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="ingredients"
                         type="text"
                         placeholder="Enter ingredients"
@@ -49,7 +51,7 @@ const RecipeCard = ({ onSubmit }) => {
                         Meal Type
                     </label>
                     <select
-                        className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+                        className="select-field block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
                         id="mealType"
                         value={mealType}
                         onChange={(e) => setMealType(e.target.value)}
@@ -68,7 +70,7 @@ const RecipeCard = ({ onSubmit }) => {
                         Cuisine Preference
                     </label>
                     <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                        className="input-field shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                         id="cuisine"
                         type="text"
                         placeholder="e.g., Italian, Mexican"
@@ -84,7 +86,7 @@ const RecipeCard = ({ onSubmit }) => {
                         Cooking Time
                     </label>
                     <select
-                        className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+                        className="select-field block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
                         id="cookingTime"
                         value={cookingTime}
                         onChange={(e) => setCookingTime(e.target.value)}
@@ -102,7 +104,7 @@ const RecipeCard = ({ onSubmit }) => {
                         Complexity
                     </label>
                     <select
-                        className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+                        className="select-field block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
                         id="complexity"
                         value={complexity}
                         onChange={(e) => setComplexity(e.target.value)}
@@ -114,7 +116,7 @@ const RecipeCard = ({ onSubmit }) => {
                 </div>
                 <div className="px-6 py-4">
                     <button
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        className="button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         type="button"
                         onClick={handleSubmit}
                     >
@@ -125,8 +127,6 @@ const RecipeCard = ({ onSubmit }) => {
         </div>
     );
 };
-
-
 
 function Ai_chatbot() {
     const [recipeData, setRecipeData] = useState(null);
@@ -181,12 +181,12 @@ function Ai_chatbot() {
 
     async function onSubmit(data) {
         // update state
-        setRecipeText('')
+        setRecipeText('');
         setRecipeData(data);
     }
 
     return (
-        <div className="chatbot-container" id="ai-chatbot"> {/* Added id attribute */}
+        <div className="chatbot-container" id="ai-chatbot">
             <div className="flex flex-row my-4 gap-2 justify-center">
                 <RecipeCard onSubmit={onSubmit} />
                 <div className="recipe-display">
