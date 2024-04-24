@@ -2,6 +2,7 @@ import express from "express"
 import cors from "cors"
 import { connectDB } from "./config/db.js";
 import foodRouter from "./routes/foodRoute.js";
+import recipeRouter from "./routes/ReceipeRoute.js"
 
 // app cofig 
 const app = express();
@@ -16,6 +17,7 @@ connectDB();
 
 // api endpoint 
 app.use("/api/food",foodRouter);
+app.use("/api/recipe",recipeRouter);
 
 // Route 
 app.get("/", (req, res) => {
