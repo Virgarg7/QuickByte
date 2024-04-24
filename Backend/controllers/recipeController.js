@@ -1,8 +1,8 @@
 const OpenAI = require("openai");
 
 async function fetchOpenAICompletionsStream(messages, callback) {
-  const OPENAI_API_KEY = "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";
-  const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
+  const open_ai_key = PROCESS.ENV.OPENAI_API_KEY;
+  const openai = new OpenAI({ apiKey: open_ai_key });
 
   const aiModel = "gpt-4-1106-preview";
   try {
